@@ -1,9 +1,11 @@
-# Vertex 2-Color
-# Given a graph G=(V,E), is there a way to color the vertices,
-#   using two colors, so that no edge connects two vertices
-#   that have the same color
+# NP Problems
+### Luke Ritchie
+Algorithms are written in pseudocode, with python-esq list structures
 
-"""
+## Vertex 2-Color
+#### Given a graph G=(V,E), is there a way to color the vertices,  using two colors, so that no edge connects two vertices  that have the same color
+
+```
 function 2-color(V, E):
     color1 = BLUE
     color2 = RED
@@ -26,15 +28,13 @@ function color(vertice, color, next_color)
         return True
     else:
         return False
-    
-"""
+``` 
 
 
-# 2-SAT
-# Given a Boolean formula Phi in conjunctive normal form 
-#   (an AND of ORs) where each OR has one or two literals,
-#    is Phi satisfiable?
-"""
+
+## 2-SAT
+#### Given a Boolean formula Phi in conjunctive normal form (an AND of ORs) where each OR has one or two literals, is Phi satisfiable?
+```
 function 2_SAT(phi):
     conditionals = []
  
@@ -64,14 +64,12 @@ function 2_SAT(phi):
     
 
     return True
+```
 
-"""
 
-
-# Hamiltonian Path
-# Given a graph G=(V,E), is there a simple (non-self-intersecting) 
-#   path that visits each vertex exactly one?
-"""
+## Hamiltonian Path
+#### Given a graph G=(V,E), is there a simple (non-self-intersecting)  path that visits each vertex exactly one?
+```
 
 function Hamiltonian_Path(V, E):
     visited = stack()
@@ -94,16 +92,12 @@ function Hamiltonian_Path(V, E):
     return False
 
 
-"""
+```
 
-# Exact 3Cover
-# Given a universe U = {x_1, ..., x_k} and S, a collection of subsets
-#   of U, where each subset has size 3, is there a subset T of  S 
-#   such that the subsets that are elements of T don't overlap, 
-#   but their union is U?  (In other words, T partitions U.)
+## Exact 3Cover
+#### Given a universe U = {x_1, ..., x_k} and S, a collection of subsets   of U, where each subset has size 3, is there a subset T of  S    such that the subsets that are elements of T don't overlap,   but their union is U?  (In other words, T partitions U.)
 
-"""
-
+```
 function 3Cover(U, S):
     Set newset = {}
     Set subsetT = {}
@@ -124,5 +118,5 @@ function 3Cover(U, S):
         
     return False
 
-"""
+```
 
