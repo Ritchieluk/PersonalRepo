@@ -59,7 +59,9 @@ function 2_SAT(phi):
                 return False
             else:
                 for clause in conditionals:
-                    if clause not in visited and curr[0]==clause[0] and clause[1]!=curr[1]:
+                    if (clause not in visited and 
+                    curr[0]==clause[0] and 
+                    clause[1]!=curr[1]):
                         dfs.push(clause)
     
 
