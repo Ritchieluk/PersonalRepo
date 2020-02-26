@@ -103,7 +103,7 @@ function 2_SAT(phi):
 ## Hamiltonian Path
 #### Given a graph G=(V,E), is there a simple (non-self-intersecting)  path that visits each vertex exactly one?
 
-I think I'm still confused because I couldn't figure out how to do this in less than factorial time. I changed the algorithm to generate a path and then check if it is a solution or not. I'm not sure if that's what you meant by an NP algorithm though. 
+I think I'm still confused because I couldn't figure out how to do this in less than factorial time. I changed the algorithm to generate a path and then check if it is a solution or not. I'm not sure if that's what you meant by an NP algorithm though. There should exist an algorithm that can solve this in EXP time correct? But I cannot seem to determine how to do that. 
 
 The function will generate a path non-deterministically and then check it in constant time. It loops until it cannot add a new edge to the path, only adding when it can find an edge that connects a vertex not already in the path. It samples vertexes from those remaining, removing them from the sampling list after adding them.  As soon as it samples a vertex it cannot add to the graph it breaks. It then checks if it added an amount of vertexes equal to the size of the graph (visited each vertex), and that there are no remaining vertices. This is not guaranteed to find a solution, but it does generate a solution in O(|V|) time and check it in O(1) time. 
 
@@ -130,8 +130,11 @@ function Hamiltonian_Path(V, E):
 ## Exact 3Cover
 #### Given a universe U = {x_1, ..., x_k} and S, a collection of subsets   of U, where each subset has size 3, is there a subset T of  S    such that the subsets that are elements of T don't overlap,   but their union is U?  (In other words, T partitions U.)
 
+Similar to Hamiltonian path I couldn't concoct a solution that was less than factorial time. 
 
 The function will generate a union of subsets of S non-deterministically and then check it in polynomial time. It loops until it reaches a max size or finds a subset that contains duplicate elements. It then loops over the chosen sets, adding each element in the sets into a list. If it adds an element that already exists in the list, there must have been overlap, so it returns False. Otherwise if it makes it through all elements without finding a duplicate it returns true. It generates a solution in O(|U|) and checks it in O(|S|)
+
+I think it would be possible to do this recursively using DFS and backtracking, similar to how I did before, but I think that is still O(|S|!)
 ```
 function 3Cover(U, S):
     Set newset = {}
